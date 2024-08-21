@@ -1,0 +1,142 @@
+[
+  {
+    "id": 1,
+    "name": "Wireless Earbuds",
+    "price": "$49.99",
+    "image": "https://picsum.photos/id/1/300/200",
+    "description": "High-quality sound with noise cancellation."
+  },
+  {
+    "id": 2,
+    "name": "Smartwatch",
+    "price": "$129.99",
+    "image": "https://picsum.photos/id/2/300/200",
+    "description": "Track your fitness and stay connected."
+  },
+  {
+    "id": 3,
+    "name": "Laptop Backpack",
+    "price": "$39.99",
+    "image": "https://picsum.photos/id/3/300/200",
+    "description": "Durable and stylish for everyday use."
+  },
+  {
+    "id": 4,
+    "name": "Coffee Maker",
+    "price": "$59.99",
+    "image": "https://picsum.photos/id/4/300/200",
+    "description": "Brew delicious coffee at home."
+  },
+  {
+    "id": 5,
+    "name": "Bluetooth Speaker",
+    "price": "$29.99",
+    "image": "https://picsum.photos/id/5/300/200",
+    "description": "Portable speaker with great sound."
+  },
+  {
+    "id": 6,
+    "name": "Smartphone Case",
+    "price": "$14.99",
+    "image": "https://picsum.photos/id/6/300/200",
+    "description": "Protect your phone in style."
+  },
+  {
+    "id": 7,
+    "name": "Yoga Mat",
+    "price": "$19.99",
+    "image": "https://picsum.photos/id/7/300/200",
+    "description": "Comfortable and non-slip for your practice."
+  },
+  {
+    "id": 8,
+    "name": "Running Shoes",
+    "price": "$79.99",
+    "image": "https://picsum.photos/id/8/300/200",
+    "description": "Supportive and breathable for your runs."
+  },
+  {
+    "id": 9,
+    "name": "Bookends",
+    "price": "$12.99",
+    "image": "https://picsum.photos/id/9/300/200",
+    "description": "Keep your books organized and upright."
+  },
+  {
+    "id": 10,
+    "name": "Desk Lamp",
+    "price": "$24.99",
+    "image": "https://picsum.photos/id/10/300/200",
+    "description": "Adjustable light for your workspace."
+  },
+  {
+    "id": 11,
+    "name": "Stainless Steel Water Bottle",
+    "price": "$17.99",
+    "image": "https://picsum.photos/id/11/300/200",
+    "description": "Keep your drinks cold or hot for hours."
+  },
+  {
+    "id": 12,
+    "name": "Portable Charger",
+    "price": "$24.99",
+    "image": "https://picsum.photos/id/12/300/200",
+    "description": "Charge your devices on the go."
+  },
+  {
+    "id": 13,
+    "name": "Sunglasses",
+    "price": "$39.99",
+    "image": "https://picsum.photos/id/13/300/200",
+    "description": "Protect your eyes and look stylish."
+  },
+  {
+    "id": 14,
+    "name": "Wireless Keyboard and Mouse",
+    "price": "$34.99",
+    "image": "https://picsum.photos/id/14/300/200",
+    "description": "Comfortable and ergonomic for typing."
+  },
+  {
+    "id": 15,
+    "name": "Candle Set",
+    "price": "$19.99",
+    "image": "https://picsum.photos/id/15/300/200",
+    "description": "Create a relaxing atmosphere in your home."
+  },
+  {
+    "id": 16,
+    "name": "Throw Blanket",
+    "price": "$29.99",
+    "image": "https://picsum.photos/id/16/300/200",
+    "description": "Soft and cozy for snuggling up."
+  },
+  {
+    "id": 17,
+    "name": "Plant Pot",
+    "price": "$9.99",
+    "image": "https://picsum.photos/id/17/300/200",
+    "description": "Stylish pot for your favorite plants."
+  },
+  {
+    "id": 18,
+    "name": "Board Game",
+    "price": "$24.99",
+    "image": "https://picsum.photos/id/18/300/200",
+    "description": "Fun for game nights with friends and family."
+  },
+  {
+    "id": 19,
+    "name": "Headphones",
+    "price": "$59.99",
+    "image": "https://picsum.photos/id/19/300/200",
+    "description": "Immersive sound for music and movies."
+  },
+  {
+    "id": 20,
+    "name": "Backpack",
+    "price": "$49.99",
+    "image": "https://picsum.photos/id/20/300/200",
+    "description": "Spacious and comfortable for everyday carry."
+  }
+]
