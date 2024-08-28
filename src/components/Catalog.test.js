@@ -7,14 +7,14 @@ describe("Catalog Component", () => {
   {
     id: 1,
     name: "Wireless Earbuds",
-    price: "$49.99",
+    price: 49.99,
     image: "https://picsum.photos/id/1/300/200",
     description: "High-quality sound with noise cancellation."
   },
   {
     id: 2,
     name: "Smartwatch",
-    price: "$129.99",
+    price: 129.99,
     image: "https://picsum.photos/id/2/300/200",
     description: "Track your fitness and stay connected."
   }

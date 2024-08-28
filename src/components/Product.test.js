@@ -6,7 +6,7 @@ describe("Product Component", () => {
   const sampleProduct = {
     id: 1,
     name: "Wireless Earbuds",
-    price: "$49.99",
+    price: 49.99,
     image: "https://picsum.photos/id/1/300/200",
     description: "High-quality sound with noise cancellation."
   };
@@ -18,7 +18,7 @@ describe("Product Component", () => {
 
   test("renders the product's price", () => {
     render(<Product product={sampleProduct} />);
-    expect(screen.getByText(sampleProduct.price)).toBeInTheDocument();
+    expect(screen.getByText(`\$${sampleProduct.price}`)).toBeInTheDocument();
   });
 
   test("renders the product's image", () => {
