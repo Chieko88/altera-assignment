@@ -9,13 +9,21 @@ const Catalog = () => {
   const productsUrl = "data/products.json";
   const [isLoading, setIsLoading] = useState(true);  
   const [error, setError] = useState(null);
-  const [sortOrder, setSortOrder] = useState("asc");
 
+  const [sortOrder, setSortOrder] = useState("asc");
   const handleSortChange = (event) => {
     setSortOrder(event.target.value);
   };
 
-  const sortedProducts = products.sort((a, b) => {
+  const [searchText, setSearchText] = useState("");
+  const handleSearchChange = (event) => {
+    setSearchText(event.target.value);
+  };
+  const filteredProducts = products.filter(product =>
+    product.name.toLowerCase().includes(searchText.toLowerCase())
+  );
+
+  const sortedProducts = filteredProducts.sort((a, b) => {
     if (sortOrder === "asc") {
       return a.price - b.price;
     } else {
@@ -55,10 +63,14 @@ const Catalog = () => {
             <option value="asc">Price (low to high)</option>
             <option value="desc">Price (high to low)</option>
           </Form.Select>
-          {sortedProducts.map((product) => (
-            <Product key={product.id} product={product} />
-          ))}
         </FormGroup>
+        <FormGroup controlId="Search by name">
+          <Form.Label>Search:</Form.Label>
+          <Form.Control type="text" onChange={handleSearchChange}/>
+        </FormGroup>
+        {sortedProducts.map((product) => (
+          <Product key={product.id} product={product} />
+        ))}
       </div>
     </>
   );

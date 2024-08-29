@@ -73,4 +73,26 @@ describe("Catalog Component", () => {
     expect(productInDescOrder[0]).toHaveTextContent("Smartwatch");
     expect(productInDescOrder[1]).toHaveTextContent("Wireless Earbuds");
   })
+
+  test("Products can be searched by name", async() => {
+    render(<Catalog/>);
+    await waitFor(() => {
+      const productCards = screen.getAllByTestId("product-card");
+      expect(productCards).toHaveLength(sampleProducts.length);
+    });
+
+    const searchInput = screen.getByLabelText("Search:")
+
+    userEvent.type(searchInput, "Wi");
+    const searchResults = await screen.findAllByTestId("product-card");
+    expect(searchResults).toHaveLength(1);
+    expect(searchResults[0]).toHaveTextContent("Wireless Earbuds");
+    expect(screen.queryByText("Smartwatch")).not.toBeInTheDocument();
+
+    userEvent.clear(searchInput);
+    const originalProducts = await screen.findAllByTestId("product-card");
+    expect(originalProducts).toHaveLength(sampleProducts.length);
+    expect(originalProducts[0]).toHaveTextContent("Wireless Earbuds");
+    expect(originalProducts[1]).toHaveTextContent("Smartwatch");
+  })
 });
