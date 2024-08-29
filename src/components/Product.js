@@ -7,7 +7,7 @@ const Product = ({product}) => {
   });
 
   return (
-    <Card style={{ width: '18rem' }}>
+    <Card data-testid="product-card" style={{ width: '18rem' }}>
       <Card.Img variant="top" src={product.image} alt={product.name}/>
       <Card.Body>
         <Card.Title>{product.name}</Card.Title>

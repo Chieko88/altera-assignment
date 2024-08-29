@@ -1,6 +1,7 @@
 import React from 'react';
 import { render, screen, waitFor } from '@testing-library/react';
 import Catalog from "./Catalog";
+import userEvent from "@testing-library/user-event";
 
 describe("Catalog Component", () => {
   const sampleProducts = [
@@ -52,4 +53,24 @@ describe("Catalog Component", () => {
       expect(fetch).toHaveBeenCalledWith("data/products.json");
     });
   });
+
+  test("Products can be sorted in asc and desc price oeders", async() => {
+    render(<Catalog/>);
+    await waitFor(() => {
+      const productCards = screen.getAllByTestId("product-card");
+      expect(productCards).toHaveLength(sampleProducts.length);
+    });
+
+    userEvent.selectOptions(screen.getByLabelText("Sort by:"), "asc");
+
+    const productInAscOrder = await screen.findAllByTestId("product-card");
+    expect(productInAscOrder[0]).toHaveTextContent("Wireless Earbuds");
+    expect(productInAscOrder[1]).toHaveTextContent("Smartwatch");
+
+    userEvent.selectOptions(screen.getByLabelText("Sort by:"), "desc");
+
+    const productInDescOrder = await screen.findAllByTestId("product-card");
+    expect(productInDescOrder[0]).toHaveTextContent("Smartwatch");
+    expect(productInDescOrder[1]).toHaveTextContent("Wireless Earbuds");
+  })
 });

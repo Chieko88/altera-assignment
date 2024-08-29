@@ -1,6 +1,7 @@
 import Product from "./Product";
 import { useState, useEffect } from "react";
 import Form from 'react-bootstrap/Form';
+import { FormGroup } from "react-bootstrap";
 
 
 const Catalog = () => {
@@ -48,13 +49,16 @@ const Catalog = () => {
   return (
     <>
       <div id="catalog">
-        <Form.Select aria-label="Sort by price" onChange={handleSortChange}>
-          <option value="asc">Price (low to high)</option>
-          <option value="desc">Price (high to low)</option>
-        </Form.Select>
-        {sortedProducts.map((product) => (
-          <Product key={product.id} product={product} />
-        ))}
+        <FormGroup controlId="Sort by price">
+          <Form.Label>Sort by:</Form.Label>
+          <Form.Select aria-label="Sort by price" onChange={handleSortChange}>
+            <option value="asc">Price (low to high)</option>
+            <option value="desc">Price (high to low)</option>
+          </Form.Select>
+          {sortedProducts.map((product) => (
+            <Product key={product.id} product={product} />
+          ))}
+        </FormGroup>
       </div>
     </>
   );
