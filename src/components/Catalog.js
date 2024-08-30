@@ -1,7 +1,8 @@
 import Product from "./Product";
 import { useState, useEffect, useMemo } from "react";
 import Form from 'react-bootstrap/Form';
-import { FormGroup } from "react-bootstrap";
+import { Col, FormGroup, Row } from "react-bootstrap";
+import Container from 'react-bootstrap/Container';
 
 
 const Catalog = () => {
@@ -60,24 +61,32 @@ const Catalog = () => {
   }
 
   return (
-    <>
+    <Container>
       <div id="catalog">
-        <FormGroup controlId="Sort by price">
-          <Form.Label>Sort by:</Form.Label>
-          <Form.Select aria-label="Sort by price" onChange={handleSortChange}>
-            <option value="asc">Price (low to high)</option>
-            <option value="desc">Price (high to low)</option>
-          </Form.Select>
-        </FormGroup>
-        <FormGroup controlId="Search by name">
-          <Form.Label>Search:</Form.Label>
-          <Form.Control type="text" onChange={handleSearchChange}/>
-        </FormGroup>
-        {sortedProducts.map((product) => (
-          <Product key={product.id} product={product} />
-        ))}
+        <Row>
+          <Col>
+            <FormGroup controlId="Sort by price">
+              <Form.Label>Sort by:</Form.Label>
+              <Form.Select aria-label="Sort by price" onChange={handleSortChange}>
+                <option value="asc">Price (low to high)</option>
+                <option value="desc">Price (high to low)</option>
+              </Form.Select>
+            </FormGroup>
+          </Col>
+          <Col>
+            <FormGroup controlId="Search by name">
+              <Form.Label>Search:</Form.Label>
+              <Form.Control type="text" onChange={handleSearchChange}/>
+            </FormGroup>
+          </Col>
+        </Row>
+        <Row>
+          {sortedProducts.map((product) => (
+            <Product key={product.id} product={product} />
+          ))}
+        </Row>
       </div>
-    </>
+    </Container>
   );
 }
 
