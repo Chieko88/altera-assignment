@@ -1,5 +1,5 @@
 import Product from "./Product";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useMemo } from "react";
 import Form from 'react-bootstrap/Form';
 import { FormGroup } from "react-bootstrap";
 
@@ -19,17 +19,22 @@ const Catalog = () => {
   const handleSearchChange = (event) => {
     setSearchText(event.target.value);
   };
-  const filteredProducts = products.filter(product =>
-    product.name.toLowerCase().includes(searchText.toLowerCase())
-  );
 
-  const sortedProducts = filteredProducts.sort((a, b) => {
-    if (sortOrder === "asc") {
-      return a.price - b.price;
-    } else {
-      return b.price - a.price;
-    }
-  });
+  const filteredProducts = useMemo(() => {
+    return products.filter(product =>
+      product.name.toLowerCase().includes(searchText.toLowerCase())
+    );
+  }, [products, searchText]);
+
+  const sortedProducts = useMemo(() => {
+    return [...filteredProducts].sort((a, b) => {
+      if (sortOrder === "asc") {
+        return a.price - b.price;
+      } else {
+        return b.price - a.price;
+      }
+    });
+  }, [filteredProducts, sortOrder]);
 
   useEffect(() => {
     setIsLoading(true);
