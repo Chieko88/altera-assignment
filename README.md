@@ -11,7 +11,7 @@ This project is built using:
 - <https://picsum.photos>, for random "product" images.
 - [Vercel], for deployment and hosting.
 
-This project is hosted at: <>
+This project is hosted at: <https://altera-assignment.vercel.app/>
 
 ## Structure
 
